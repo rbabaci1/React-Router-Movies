@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import saveAtHere from "./SaveAtHere";
 
-const MovieCard = ({ movie, saveMovie }) => {
+const MovieCard = ({ movie, addToSavedList }) => {
   const { title, director, metascore, stars } = movie;
 
   return (
@@ -24,7 +25,10 @@ const MovieCard = ({ movie, saveMovie }) => {
           ))}
         </div>
       </Link>
-      <div className="save-button" onClick={event => saveMovie()}>
+      <div
+        className="save-button"
+        onClick={() => saveAtHere(addToSavedList, movie)}
+      >
         Save
       </div>
     </div>
