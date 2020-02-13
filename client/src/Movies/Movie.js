@@ -28,6 +28,7 @@ const Movie = props => {
   }
 
   const { title, director, metascore, stars } = movie;
+  return <MovieCard movie={movie} />;
 };
 
 export default Movie;
