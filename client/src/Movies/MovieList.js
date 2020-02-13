@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 
 const MovieList = props => {
+  const saveMovie = props.addToSavedList;
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -23,14 +24,19 @@ const MovieList = props => {
   return (
     <div className="movie-list">
       {movies.map(movie => (
-        <Link to={`/movies/${movie.id}`}>
-          <MovieDetails key={movie.id} movie={movie} />
-        </Link>
+        <MovieDetails key={movie.id} movie={movie} saveMovie={saveMovie} />
       ))}
     </div>
   );
 };
 
-const MovieDetails = ({ movie }) => <MovieCard movie={movie} />;
+const MovieDetails = ({ movie, saveMovie }) => {
+  const saveIt = () => {
+    const addToSavedList = saveMovie;
+    addToSavedList(movie);
+  };
+
+  return <MovieCard movie={movie} saveMovie={saveIt} />;
+};
 
 export default MovieList;
