@@ -75,4 +75,23 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+/* Unvisited link  */
+
+a:visited {
+  color: rgb(94, 91, 91);
+}
+
+/* Visited link    */
+
+a:hover {
+  color: rgb(23, 48, 102);
+}
+
+/* Mouse over link */
+
+a:active {
+  color: rgb(65, 9, 87);
 }
