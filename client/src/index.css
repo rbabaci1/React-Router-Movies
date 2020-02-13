@@ -31,10 +31,15 @@ body {
   width: 75%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.home-link {
+  margin-left: auto;
 }
 
 .saved-list h3 {
+  margin: 0;
   margin-right: 10px;
 }
 
@@ -59,7 +64,8 @@ body {
   top: 25px;
   right: 25px;
   border: 1px solid grey;
-  padding: 5px 10px;
+  padding: 5px 20px;
+  border-radius: 2px;
   background-color: lightseagreen;
   cursor: pointer;
 }
