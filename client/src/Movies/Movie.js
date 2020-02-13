@@ -26,7 +26,7 @@ const Movie = props => {
     return <div>Loading movie information...</div>;
   }
 
-  return <MovieCard movie={movie} />;
+  return <MovieCard movie={movie} saveMovie={saveMovie} />;
 };
 
 export default Movie;
